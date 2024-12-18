@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - ClassRoom</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/settings.css}">
+    <link rel="shortcut icon" th:href="@{/img/fav.webp}" type="image/x-icon">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>ClassRoom</h2>
+            <button id="toggleSidebar" class="toggle-btn">☰</button>
+        </div>
+        <div class="nav-links">
+            <a th:href="@{/}"><span>🏠</span> Dashboard</a>
+            <a class="active"><span>⚙️</span> Settings</a>
+            <a href="/logout"><span>🔗</span> Logout</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="settings-header">
+            <h1>Settings</h1>
+        </header>
+
+        <div class="settings-container">
+            <div class="settings-sidebar">
+                <button class="settings-tab active" data-tab="profile">Profile Settings</button>
+                <button class="settings-tab" data-tab="account">Account Settings</button>
+            </div>
+
+            <div class="settings-content">
+                <div class="settings-section active" id="profile">
+                    <h2>Profile Settings</h2>
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img src="https://agdocaqxanskehpkorze.supabase.co/storage/v1/object/public/images/user.jpg" alt="Profile Picture">
+                        </div>
+                        <div class="profile-info">
+                            <form id="profileForm">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" value="User">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bio">Bio</label>
+                                    <textarea id="bio" rows="4">Computer Science student passionate about web development.</textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-save">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section" id="account">
+                    <h2>Account Settings</h2>
+                    <form id="accountForm">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm New Password</label>
+                            <input type="password" id="confirmPassword">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-save">Update Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script th:src="@{/js/settings.js}"></script>
+</body>
+</html>

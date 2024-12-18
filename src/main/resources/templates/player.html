@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player - ClassRoom</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/player.css}">
+    <link rel="shortcut icon" th:href="@{/img/fav.webp}" type="image/x-icon">
+</head>
+<body>
+    <span th:text="${courseId}" id="courseId" hidden></span>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>ClassRoom</h2>
+            <button id="toggleSidebar" class="toggle-btn">☰</button>
+        </div>
+        <div class="nav-links">
+            <a th:href="@{/}"><span>🏠</span> Dashboard</a>
+            <a th:href="@{/classroom/settings}"><span>⚙️</span> Settings</a>
+            <a href="/logout"><span>🔗</span> Logout</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="video-container">
+            <div class="primary-video">
+                <div class="video-player">
+                    <video id="mainVideo" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h1 id="videoTitle"></h1>
+                    <div class="description">
+                        <h3>About this lesson</h3>
+                        <p id="videoDescription"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="playlist-container">
+                <h2>Course Content</h2>
+                <div class="playlist">
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <template id="video-item-template">
+        <div class="video-item">
+            <div class="thumbnail">
+                <img src="" alt="">
+            </div>
+            <div class="video-details">
+                <h3 class="title"></h3>
+                <p class="description" style="color: black;"></p>
+            </div>
+        </div>
+    </template>
+
+    <script th:src="@{/js/player.js}"></script>
+</body>
+</html>

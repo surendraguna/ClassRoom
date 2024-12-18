@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassRoom - Online Learning Platform</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/fav.webp}" type="image/x-icon">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>ClassRoom</h2>
+            <button id="toggleSidebar" class="toggle-btn">☰</button>
+        </div>
+        <div class="nav-links">
+            <a class="active"><span>🏠</span> Dashboard</a>
+            <a th:href="@{/classroom/settings}"><span>⚙️</span> Settings</a>
+            <a href="/logout"><span>🔗</span> Logout</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <div class="course-grid">
+
+        </div>
+    </main>
+
+    <template id="course-card-template">
+        <div class="course-card">
+            <div class="thumbnail">
+                <img src="" alt="">
+            </div>
+            <div class="content">
+                <h3 class="title"></h3>
+                <p class="description"></p>
+                <p class="subject"></p> 
+            </div>
+        </div>
+    </template>    
+
+    <script th:src="@{/js/app.js}"></script>
+</body>
+</html>

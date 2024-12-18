@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2FA</title>
+    <link rel="shortcut icon" th:href="@{/img/fav.webp}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/css/twofa.css}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>🔐 Two-Factor Authentication</h2>
+            <p>We have sent a verification code to your registered email.</p>
+            <form id="verify">
+                <div class="otp-inputs">
+                    <input type="text" maxlength="1" class="otp-input" required>
+                    <input type="text" maxlength="1" class="otp-input" required>
+                    <input type="text" maxlength="1" class="otp-input" required>
+                    <input type="text" maxlength="1" class="otp-input" required>
+                    <input type="text" maxlength="1" class="otp-input" required>
+                    <input type="text" maxlength="1" class="otp-input" required>
+                </div>
+                <button type="submit" class="submit-btn">Verify</button>
+            </form>
+            <div class="footer">
+                <p><a href="/logout" id="resendLink">Logout</a></p>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/js/twofa.js}"></script>
+</body>
+</html>
